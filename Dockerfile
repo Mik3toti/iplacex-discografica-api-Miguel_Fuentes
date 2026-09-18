@@ -1,5 +1,5 @@
 #stage 1
-FROM gradle:jdk21 as builder
+FROM gradle:jdk21 AS builder
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY src ./src
 RUN gradle build --no-daemon
 
 #stage2
-FROM openjdk:21-jdk-slim
+FROM openjdk:21-ea-jdk-slim
 
 WORKDIR /app
 
